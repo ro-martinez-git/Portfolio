@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/fondoabout.jpg');
+    background-size: cover;
+    color: #ffffff;
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 97vh;
+    width: 95vw;
+}
+
+.carousel-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+    width: 66%;
+    max-width: none;
+    min-height: 50vh;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item {
+    margin: 20px;
+    display: none;
+    height: calc(100% - 40px);
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+}
+
+.carousel-item.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    margin: 10px 10px;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.name {
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.title {
+    color: #ffeb3b;
+}
+
+/* Estilos de los íconos */
+.carousel-item i {
+    font-size: 2em; 
+    color: #ff9800;
+    margin-bottom: 10px; 
+}
+
+.carousel-item i:hover {
+    color: #ffeb3b; 
+    transform: scale(1.1); /* Aumenta el tamaño del ícono al pasar el cursor */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Navegación del carrusel */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.carousel-nav span {
+    cursor: pointer;
+    font-size: 2em;
+    color: #ff9800;
+    user-select: none;
+    pointer-events: auto;
+}
+
+.carousel-nav span:hover {
+    color: #ffeb3b;
+}
+
+/* Media queries para responsiveness */
+@media (max-width: 768px) {
+    .carousel-content {
+        width: 92%;
+        height: 1%;
+    }
+
+    .carousel-item {
+        height: auto;
+    }
+
+    .carousel-text {
+        font-size: 1em;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-nav span {
+        margin: -34px;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí</title>
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    
+    <div class="carousel">
+        <div class="carousel-content">
+            <h1>SOBRE MÍ</h1>
+            
+            <div class="carousel-item active">
+                <i class="fas fa-laptop-code"></i> <!-- Ícono de laptop con código -->
+                <p class="carousel-text">
+                    Soy desarrolladora Full-Stack con experiencia en la creación <br> 
+                    de interfaces dinámicas y optimizadas para la mejor experiencia del usuario. <br> 
+                    Mi enfoque se basa en la eficiencia, la accesibilidad y la usabilidad, <br> 
+                    asegurando que cada proyecto cumpla con altos estándares de calidad.
+                </p>
+                <div class="carousel-text2">
+                    <p class="name">Rocío Martinez</p>
+                    <p class="title">Desarrolladora Full-Stack</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <i class="fas fa-tools"></i> <!-- Ícono de herramientas -->
+                <p class="carousel-text">
+                    Tengo conocimientos sólidos en HTML, CSS, JavaScript y React, <br> 
+                    además de experiencia en el uso de herramientas y frameworks modernos para el desarrollo frontend. <br> 
+                    Me gusta mantenerme actualizada con las últimas tendencias y tecnologías <br> 
+                    para seguir mejorando mis habilidades.
+                </p>
+                <div class="carousel-text2">
+                    <p class="name">Rocío Martinez</p>
+                    <p class="title">Desarrolladora Full-Stack</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <i class="fas fa-lightbulb"></i> <!-- Ícono de bombilla -->
+                <p class="carousel-text">
+                    Disfruto resolver problemas y optimizar interfaces, <br> 
+                    buscando siempre la mejor solución tanto a nivel técnico como visual. <br> 
+                    Cuando no estoy programando, me gusta explorar nuevas herramientas tecnológicas <br> 
+                    y aprender sobre diseño de experiencia de usuario.
+                </p>
+                <div class="carousel-text2">
+                    <p class="name">Rocío Martinez</p>
+                    <p class="title">Desarrolladora Full-Stack</p>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.carousel-item');
+            const next = document.querySelector('.next');
+            const prev = document.querySelector('.prev');
+            let index = 0;
+
+            items[index].classList.add('active');
+
+            next.addEventListener('click', () => {
+                items[index].classList.remove('active');
+                index = (index + 1) % items.length;
+                items[index].classList.add('active');
+            });
+
+            prev.addEventListener('click', () => {
+                items[index].classList.remove('active');
+                index = (index - 1 + items.length) % items.length;
+                items[index].classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
