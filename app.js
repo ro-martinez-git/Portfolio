@@ -7,11 +7,11 @@ var logger = require('morgan');
 // Importar los routers
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var aboutRouter = require('./routes/about');  // Aquí agregas el aboutRouter
-var contactRouter = require('./routes/contact'); 
-var projectRouter = require('./routes/project'); 
-var skillsRouter = require('./routes/skills'); 
-var formRouter = require('./routes/form'); 
+var aboutRouter = require('./routes/about');
+var contactRouter = require('./routes/contact');
+var projectRouter = require('./routes/project');
+var skillsRouter = require('./routes/skills');
+var formRouter = require('./routes/form');
 
 var app = express();
 
@@ -28,11 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Usar los routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/about', aboutRouter);  // Aquí defines la ruta '/about' usando aboutRouter
-app.use('/contact', contactRouter); 
-app.use('/project', projectRouter); 
-app.use('/skills', skillsRouter); 
-app.use('/form', formRouter); 
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
+app.use('/project', projectRouter);
+app.use('/skills', skillsRouter);
+app.use('/form', formRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,11 +41,9 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

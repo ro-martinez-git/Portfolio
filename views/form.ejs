@@ -12,21 +12,89 @@
     <%- include('./partials/navbar') %>
     <div class="content-wrapper">
         <section class="form-wrapper">
-            <form class="contact-form" action="mailto:tuemail@example.com" method="post" enctype="text/plain">
+            <form class="contact-form" id="contactForm" novalidate>
                 <h2>Envíame un mensaje</h2>
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
+                <span id="nameError" class="error-message">Por favor, ingresa tu nombre.</span>
                 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                <span id="emailError" class="error-message">Por favor, ingresa un email válido.</span>
                 
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
+                <span id="messageError" class="error-message">Por favor, ingresa tu mensaje.</span>
                 
                 <button type="submit">Enviar</button>
             </form>
+            <div id="messageContainer" class="message-container"></div> 
         </section>
     </div>
     <%- include('./partials/footer') %>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            // Validación personalizada
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name) {
+                document.getElementById('nameError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+
+            if (!email || !email.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if (!message) {
+                document.getElementById('messageError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('messageError').style.display = 'none';
+            }
+
+            if (valid) {
+                const formData = new FormData(this);
+                
+                fetch('/form', {
+                    method: 'POST',
+                    body: new URLSearchParams(formData),
+                })
+                .then(response => response.text())
+                .then(data => {
+                    const messageContainer = document.getElementById('messageContainer');
+                    messageContainer.classList.add('success');
+                    messageContainer.classList.remove('error');
+                    messageContainer.innerText = "Mensaje enviado exitosamente.";
+                    messageContainer.style.display = 'block';
+                    this.reset();
+                    setTimeout(() => {
+                        messageContainer.style.display = 'none';
+                    }, 5000); // Ocultar el mensaje después de 5 segundos
+                })
+                .catch(error => {
+                    const messageContainer = document.getElementById('messageContainer');
+                    messageContainer.classList.add('error');
+                    messageContainer.classList.remove('success');
+                    messageContainer.innerText = "Error al enviar el mensaje. Por favor, inténtelo de nuevo.";
+                    messageContainer.style.display = 'block';
+                    setTimeout(() => {
+                        messageContainer.style.display = 'none';
+                    }, 5000); // Ocultar el mensaje después de 5 segundos
+                });
+            }
+        });
+    </script>
 </body>
 </html>
