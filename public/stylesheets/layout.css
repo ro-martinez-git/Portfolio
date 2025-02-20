@@ -122,9 +122,7 @@ body {
     text-align: center;
     color: white;
     width: 100%; /* Asegura que el footer ocupe todo el ancho de la pantalla */
-    position: absolute; /* Permitir que el contenido principal empuje el footer hacia abajo */
-    bottom: 0;
-    left: 0;
+    position: relative;
 }
 
 .text-footer {

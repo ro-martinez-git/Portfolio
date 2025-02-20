@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const sendEmail = require('../javascripts/form');  // Ruta correcta a la nueva ubicación de form.js
+const sendEmail = require('../javascripts/form'); 
 
 /* GET form page. */
 router.get('/', function(req, res, next) {
