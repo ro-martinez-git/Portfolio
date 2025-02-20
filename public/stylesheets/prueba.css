@@ -1,6 +1,6 @@
 /* Estilos base */
 * {
-    margin-top: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
@@ -9,6 +9,8 @@
 html,
 body {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .body-class {
@@ -122,7 +124,8 @@ body {
     text-align: center;
     color: white;
     width: 100%; /* Asegura que el footer ocupe todo el ancho de la pantalla */
-    position: relative;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    flex-shrink: 0; /* Asegura que el footer no se encoja */
 }
 
 .text-footer {
@@ -131,4 +134,119 @@ body {
     padding-top: 7px;
     padding-bottom: 2px;
     margin-bottom: -3px;
+}
+
+/* Sección de contenido principal */
+.about-container {
+    padding: 0px;
+    flex: 1; /* Asegura que el contenido principal ocupe todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    margin-block: 60px;
+}
+
+.my-title {
+    font-size: 2.5em;
+}
+
+.text-container {
+    max-width: 100%;
+    text-align: center;
+    display: contents;
+}
+
+.text-content {
+    max-width: 50%;
+    margin: auto;
+}
+
+.text-content2 {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    font-size: 1.1em;
+    text-align: -webkit-center;
+}
+
+.image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.buttons button {
+    background-color: #E2E911;
+    color: #0A192F;
+    border: none;
+    padding: 13px 74px;
+    margin-right: 20px;
+    margin-top: 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #10B981;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+    text-shadow: 0 0 10px #10B981, 0 0 20px #10B981;
+}
+
+.profile-img {
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.image-placeholder {
+    width: 7px;
+    height: 5px;
+    background-color: #0D1117;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .about-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-container {
+        max-width: 100%;
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .profile-img {
+        width: 70%;
+        height: 70%;
+    }
 }

@@ -4,7 +4,6 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,6 +17,15 @@ body {
     width: 80%;
     max-width: 600px;
     text-align: center;
+}
+
+.container-sk {
+    display: flex;
+    justify-content: center;
+    position: static;
+    min-height: 92vh;
+    margin-top: 14vh;
+    margin-bottom: 4vh;
 }
 
 .skills-container h1 {
@@ -52,9 +60,44 @@ body {
     transition: width 0.5s ease-in-out;
 }
 
-.javascript { width: 55%; background-color: #fdd835; }
-.html-css { width: 80%; background-color: #ff5722; }
-.react { width: 50%; background-color: #61dafb; }
-.java { width: 60%; background-color: #f44336; }
-.sequelize { width: 65%; background-color: #8bc34a; }
-.mysql { width: 60%; background-color: #00bcd4; }
+.javascript {
+    width: 55%;
+    background-color: #fdd835;
+}
+
+.html-css {
+    width: 80%;
+    background-color: #ff5722;
+}
+
+.react {
+    width: 50%;
+    background-color: #61dafb;
+}
+
+.java {
+    width: 60%;
+    background-color: #f44336;
+}
+
+.sequelize {
+    width: 65%;
+    background-color: #8bc34a;
+}
+
+.mysql {
+    width: 60%;
+    background-color: #00bcd4;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+    .skills-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+}
