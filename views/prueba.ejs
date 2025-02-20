@@ -1,84 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Portfolio</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/prueba.css' />
     <link rel='stylesheet' href='/stylesheets/layout.css' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  </head>
-  <body class="body-class">
-    <header class="navbar">
-    <nav>
-        <div class="menu-toggle" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-        <ul id="nav-menu">
-            <li class="home"><a href="/">HOME</a></li>
-            <li><a href="/about">SOBRE MI</a></li>
-            <li><a href="/project">PROYECTOS</a></li>
-            <li><a href="/skills">HABILIDADES</a></li>
-            <li><a href="/contact">CONTACTO</a></li>
-        </ul>
-    </nav>
-    <a href="/documents/CV_Rocio_Martinez.pdf" class="cv-button" download>Mi CV</a>
+</head>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuToggle = document.getElementById('menu-toggle');
-            const nav = document.getElementById('nav-menu');
-            const navLinks = document.querySelectorAll('#nav-menu a');
-
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('show-menu');
-            });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('show-menu');
-                });
-            });
-        });
-    </script>
-</header>
-    <div class="about-container"> 
-      <section class="about-content">
-          <div class="text-container">
-              <div class="text-content">
-                  <h1 class="my-title">
-                    ¡Hola! 
-                    Soy Rocío
-                    <br>Desarrolladora web</h1>
-                  <p class="text-content2">
-                    Soy amante de la creatividad digital. <br>
-                    Transformo ideas en interfaces atractivas y fáciles de usar. 
-                    Me encanta hacer que las experiencias digitales sean atractivas y fluidas.</p>
-                  <div class="buttons">
-                <a href="mailto:roomartinez988@gmail.com?subject=Consulta&body=Hola Rocío, quiero saber más sobre tu trabajo." class="button-link"><button>Email</button></a>
-                      <a href="https://wa.me/5493492511486?text=Hola%20Rocío,%20quiero%20saber%20más%20sobre%20tu%20trabajo." target="_blank" class="button-link"><button>WhatsApp</button></a>
-                  </div>
-                  </div>
-              </div>
-              <div class="image-container">
+<body class="body-class">
+    <%- include('./partials/navbar') %>
+    <div class="about-container">
+        <section class="about-content">
+            <div class="text-container">
+                <div class="text-content">
+                    <h1 class="my-title">
+                        ¡Hola!
+                        Soy Rocío
+                        <br>Desarrolladora web
+                    </h1>
+                    <p class="text-content2">
+                        Soy amante de la creatividad digital. <br>
+                        Transformo ideas en interfaces atractivas y fáciles de usar.
+                        Me encanta hacer que las experiencias digitales sean atractivas y fluidas.
+                    </p>
+                    <div class="buttons">
+                        <div>
+                            <a href="mailto:roomartinez988@gmail.com?subject=Consulta&body=Hola Rocío, quiero saber más sobre tu trabajo."
+                               class="button-link"><button>Email</button></a>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/5493492511486?text=Hola%20Rocío,%20quiero%20saber%20más%20sobre%20tu%20trabajo."
+                               target="_blank" class="button-link"><button>WhatsApp</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-container">
                 <img src="/images/imgPerfil.JPG" alt="Imagen de perfil" class="profile-img">
             </div>
-          </div>
-      </section>
-  </div>
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <footer class="footer">
-        <p class="text-footer">Política de Privacidad</p>
-        <p class="text-footer">© 2025 Creado por Rocío Martinez</p>
-    </footer>
+        </section>
+    </div>
+    <%- include('./partials/footer') %>
 </body>
-</html>
-  </body>
-</html>
 
+</html>

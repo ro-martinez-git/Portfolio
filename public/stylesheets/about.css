@@ -20,7 +20,7 @@ html, body {
     justify-content: center;
     align-items: center;
     min-height: 97vh;
-    width: 95vw;
+    width: 100vw;
 }
 
 .carousel-content {
@@ -120,6 +120,7 @@ p {
     .carousel-content {
         width: 92%;
         height: 1%;
+        margin-top: 8vh;
     }
 
     .carousel-item {
