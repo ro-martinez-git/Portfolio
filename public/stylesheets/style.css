@@ -1,21 +1,38 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/fondoabout.jpg');
+  background-size: cover;
+  color: #ffffff;
+}
+
 .about-container {
   padding: 0px;
-  flex: 1; /* Asegura que el contenido principal ocupe todo el espacio disponible */
+  flex: 1;
+  /* Asegura que el contenido principal ocupe todo el espacio disponible */
   display: flex;
   justify-content: center;
 }
 
 .about-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  width: 100%;
-  text-align: center;
-  margin-block: 60px;
+  position: static;
+  min-height: 77vh;
+  margin-top: 15vh;
+  margin-bottom: 0vh;
 }
+
 
 .my-title {
   font-size: 2.5em;
@@ -44,6 +61,12 @@
   display: flex;
   justify-content: center;
   margin-top: 0px;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
 }
 
 .buttons button {
@@ -67,11 +90,10 @@
 }
 
 .profile-img {
-  width: 60%;
-  height: 60%;
   border-radius: 50%;
+  max-width: 61%;
+  height: auto;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .image-placeholder {
@@ -83,46 +105,56 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.footer {
-  background: black;
-  padding: 3px;
-  text-align: center;
-  color: white;
-  margin-top: auto;
-  width: 100%;
-}
-
-.text-footer {
-  font-size: 14px;
-  line-height: normal;
-}
-
-@media (max-width: 768px) {
-  .navbar ul {
-      flex-direction: column;
-      gap: 10px;
-  }
-
+@media (min-width: 320px) and (max-width: 768px) {
   .about-content {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 5vh;
   }
-
-  .text-container {
-      max-width: 100%;
-  }
-
   .text-content {
-      max-width: 100%;
+    max-width: 75%;
   }
 
-  .image-container {
-      width: 100%;
+  .text-content2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 1.08em;
+    text-align: -webkit-center;
   }
 
-  .profile-img {
-      width: 70%;
-      height: 70%;
+  .my-title {
+    font-size: 1.5em;
+    margin-top: 3.5vh
   }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div-button {
+    margin: 10px 0;
+    /* Añade un margen vertical para separar los botones */
+  }
+
+  .button-link {
+    text-decoration: none;
+    /* Si quieres que el enlace no tenga subrayado */
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .buttons button {
+    margin-right: 0px;
+    width: 35vh;
+    text-align: center;
+    margin: 0px;
+  }
+
+
 }
