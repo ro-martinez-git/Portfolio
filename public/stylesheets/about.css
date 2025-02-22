@@ -9,7 +9,6 @@ html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/fondoabout.jpg');
     background-size: cover;
     color: #ffffff;
 }
@@ -19,7 +18,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 97vh;
+    min-height: 91vh;
     width: 100vw;
 }
 
@@ -120,7 +119,9 @@ p {
     .carousel-content {
         width: 92%;
         height: 1%;
-        margin-top: 8vh;
+        margin-top: 30vh;
+        margin-bottom: 10vh;
+        min-height: 100vh;
     }
 
     .carousel-item {

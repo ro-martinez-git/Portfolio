@@ -1,6 +1,5 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #121212;
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -15,7 +14,6 @@ body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/fondoabout.jpg');
     background-size: cover;
     color: #ffffff;
 }
@@ -74,6 +72,11 @@ body {
     background-color: #10B981;
     transform: scale(1.1);
 }
+@media (min-width: 1024px){
+    .content-wrapper {
+        height: 92%;
+    }
+}
 
 /* Responsiveness */
 @media (min-width: 768px) {
@@ -88,5 +91,19 @@ body {
 
     .contact-button {
         padding: 15px 30px;
+    }
+}
+
+/* celular horizontal */
+@media (max-width: 767px) and (orientation: landscape) {
+    .contact-section {
+        max-width: 600px;
+        padding: 30px;
+        margin-top: 46vh;
+        margin-bottom: 10vh;
+    }
+
+    .content-wrapper {
+        overflow: scroll;
     }
 }
