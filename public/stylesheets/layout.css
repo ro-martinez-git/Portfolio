@@ -13,10 +13,10 @@ body {
 
 .body-class {
     font-family: "Inter", sans-serif;
-    background-color: #0A192F;
+    background-color: white;
     margin: 0;
     padding: 0;
-    color: #E2E8F0;
+    color: black;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -28,14 +28,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #0D1117;
+    background: linear-gradient(45deg, #ee4ac2, #E2E911);
     flex-wrap: wrap;
-    width: 100vw; /* Asegurar que ocupe el 100% del ancho de la pantalla */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra para destacar */
-    position: fixed; /* Navbar fija en la parte superior */
+    width: 100vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Asegura que la navbar esté encima de otros elementos */
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -44,45 +44,75 @@ body {
     gap: 20px;
     padding: 0;
     margin: 0;
-    flex: 1; /* Asegura que el ul ocupe todo el ancho posible */
-    justify-content: flex-end; /* Alinea el menú a la derecha */
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .navbar a {
     text-decoration: none;
     color: #F9FAFB;
     font-weight: 600;
-    transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
     color: #f4e5f4;
-    text-shadow: 0 0 10px #ee4ac2, 0 0 20px #E2E911;
+    position: relative;
 }
 
-/* Efecto al seleccionar una opción */
+/* Subrayado solo en enlaces normales, excluyendo el botón CV */
+.navbar a:not(.cv-button):hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF;
+    left: 0;
+    bottom: -2px;
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        left: 50%;
+    }
+
+    to {
+        width: 100%;
+        left: 0;
+    }
+}
+
 .navbar a:active {
-    background-color: #444c56; /* Color de fondo al hacer clic */
-    color: #ffffff; /* Color del texto al hacer clic */
-    text-shadow: none; /* Eliminar sombra de texto al hacer clic */
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.3); /* Efecto de "presionar" */
+    color: #f4e5f4;
 }
 
+/* Estilos para el botón "Mi CV" */
 .cv-button {
-    background-color: #FF6B1A;
+    background-color: #333300;
     color: #F9FAFB;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 12px;
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cv-button:hover {
-    background-color: #10B981;
-    box-shadow: 0 6px 12px #00b6d44d;
-    text-shadow: 0 0 10px #f8f8f8, 0 0 20px #ee4ac2;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #F9FAFB;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    text-decoration: none !important;
 }
+
+.fa-arrow-down:before {
+    content: "\f063";
+    margin-right: 5PX;
+}
+
 
 /* Menu toggle */
 .menu-toggle {
@@ -108,6 +138,7 @@ body {
         display: flex;
         padding-top: 12px;
         padding-bottom: 5px;
+        text-align: start;
     }
 
     .menu-toggle {
@@ -117,12 +148,11 @@ body {
 
 /* FOOTER */
 .footer {
-    background: black;
-    padding: 10px; /* Aumentar padding para dar más espacio */
-    text-align: center;
-    color: white;
-    width: 100%; /* Asegura que el footer ocupe todo el ancho de la pantalla */
+    width: 100%;
     position: relative;
+    background: linear-gradient(45deg, #E2E911, #ee4ac2);
+    color: #0A192F;
+    text-align: center;
 }
 
 .text-footer {
